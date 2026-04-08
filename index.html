@@ -1,20 +1,58 @@
 <!-- index.html -->
-  <p class="formatted">Discover a selection of trending and top-rated games across multiple genres.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electron Gaming Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <h1 class="logo">⚡ Electron Hub</h1>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#games">Games</a></li>
+    <li><a href="#videos">Videos</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+</nav>
+
+<!-- ===== HOME ===== -->
+<section id="home" class="two-column">
+  <div>
+    <h2 class="glow">Next-Gen Gaming Experience</h2>
+    <p class="formatted">Step into a futuristic gaming hub with immersive visuals and smooth UI.</p>
+    <p class="formatted">Explore top games, epic gameplay, and stunning galleries.</p>
+    <button class="btn">Enter Hub</button>
+  </div>
+  <div>
+    <img src="gamephoto.jpg" class="hero-img" alt="Gaming">
+  </div>
+</section>
+
+<!-- ===== GAMES ===== -->
+<section id="games">
+  <h2 class="glow">Featured Games</h2>
+  <p class="formatted">Discover trending and top-rated games across multiple genres.</p>
 
   <div class="image-container">
-    <div class="card"><img src="gamephoto.jpg" alt="Game"></div>
-    <div class="card"><img src="gamephoto2.jpg" alt="Game"></div>
-    <div class="card"><img src="gamephoto3.jpg" alt="Game"></div>
+    <div class="card"><img src="gamephoto.jpg"></div>
+    <div class="card"><img src="gamephoto2.jpg"></div>
+    <div class="card"><img src="gamephoto3.jpg"></div>
   </div>
 
-  <h3>Top Rated Games</h3>
+  <h3 class="glow">Top Rated Games</h3>
   <table>
     <tr><th>Game</th><th>Genre</th><th>Rating</th></tr>
     <tr><td>CyberQuest</td><td>RPG</td><td>9/10</td></tr>
     <tr><td>BattleForge</td><td>Action</td><td>8.5/10</td></tr>
   </table>
 
-  <h3>Game Categories</h3>
+  <h3 class="glow">Game Categories</h3>
   <ul>
     <li>Action
       <ul>
@@ -31,8 +69,8 @@
 
 <!-- ===== VIDEOS ===== -->
 <section id="videos">
-  <h2>Gameplay Videos</h2>
-  <p class="formatted">Watch exciting gameplay moments from popular titles.</p>
+  <h2 class="glow">Gameplay Videos</h2>
+  <p class="formatted">Watch intense and exciting gameplay moments.</p>
 
   <div class="video-container">
     <div class="card"><iframe src="https://www.youtube.com/embed/nTUoIyTMw0Q" allowfullscreen></iframe></div>
@@ -45,20 +83,20 @@
 
 <!-- ===== GALLERY ===== -->
 <section id="gallery">
-  <h2>Gallery</h2>
+  <h2 class="glow">Gallery</h2>
   <div class="gallery">
-    <div class="card"><img src="gamephoto.jpg" alt="Gallery"></div>
-    <div class="card"><img src="gamephoto2.jpg" alt="Gallery"></div>
-    <div class="card"><img src="gamephoto3.jpg" alt="Gallery"></div>
-    <div class="card"><img src="gamephoto4.jpg" alt="Gallery"></div>
-    <div class="card"><img src="gamephoto5.jpg" alt="Gallery"></div>
+    <div class="card"><img src="gamephoto.jpg"></div>
+    <div class="card"><img src="gamephoto2.jpg"></div>
+    <div class="card"><img src="gamephoto3.jpg"></div>
+    <div class="card"><img src="gamephoto4.jpg"></div>
+    <div class="card"><img src="gamephoto5.jpg"></div>
   </div>
 </section>
 
 <!-- ===== ABOUT ===== -->
 <section id="about">
-  <h2>About</h2>
-  <p class="formatted">This project demonstrates HTML, CSS, layout design, and modern UI concepts.</p>
+  <h2 class="glow">About</h2>
+  <p class="formatted">A modern student project showcasing futuristic gaming UI design.</p>
 </section>
 
 <!-- ===== FOOTER ===== -->
@@ -68,3 +106,152 @@
 
 </body>
 </html>
+
+/* ================= style.css ================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at top, #0a0a0f, #000000 80%);
+  color: #e6f7ff;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: rgba(0,0,0,0.9);
+  border-bottom: 1px solid rgba(0,255,255,0.2);
+  position: sticky;
+  top: 0;
+}
+
+.navbar a {
+  color: #e6f7ff;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.navbar a:hover {
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffff;
+}
+
+.logo {
+  color: #00ffff;
+}
+
+/* LAYOUT */
+.two-column, section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 50px;
+}
+
+section h2, section h3, table {
+  grid-column: span 2;
+}
+
+/* GLOW TEXT */
+.glow {
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+/* CARDS */
+.card {
+  background: rgba(0,0,0,0.6);
+  border: 1px solid rgba(0,255,255,0.2);
+  border-radius: 15px;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 0 20px #00ffff;
+}
+
+.card img, iframe {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* BUTTON */
+.btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  background: #00ffff;
+  color: black;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: white;
+}
+
+/* GRID CONTAINERS */
+.gallery, .video-container, .image-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  grid-column: span 2;
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  border: 1px solid rgba(0,255,255,0.3);
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background: rgba(0,255,255,0.1);
+}
+
+/* TEXT */
+.formatted {
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: black;
+  border-top: 1px solid rgba(0,255,255,0.2);
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);} 
+  to {opacity: 1; transform: translateY(0);} 
+}
+
+section {
+  animation: fadeIn 1s ease-in;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .two-column, section {
+    grid-template-columns: 1fr;
+  }
+}
